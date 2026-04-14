@@ -1,29 +1,77 @@
-![Python](https://img.shields.io/badge/Python-3.9-blue)
-![Scikit-Learn](https://img.shields.io/badge/ML-Scikit--Learn-orange)
-![Status](https://img.shields.io/badge/Status-Completed-green)
-
 # 💰 Adult Income Prediction (Census Data)
 
 ## 📌 Project Overview
-This project builds an end-to-end machine learning pipeline for predicting whether an individual's income exceeds $50K/year using census data. The workflow includes data preprocessing, feature engineering, model training, evaluation, and reusable prediction functions.
+This project is an end-to-end machine learning pipeline that predicts whether an individual's income exceeds $50K/year using census data.
 
-A professional machine learning implementation using **Object-Oriented Programming (OOP)**.  
-This project leverages **Pandas** for data engineering and **Scikit-learn** for predictive modeling.
+The system is built using a clean Object-Oriented Programming (OOP) structure and covers the full ML workflow including preprocessing, training, evaluation, and prediction export.
 
 ---
 
 ## 🚀 Key Features
-* **Smart Data Management:** Automatically fetches datasets from the UCI Machine Learning Repository and implements local caching for performance.
-* **Automated Preprocessing:** Uses `LabelEncoder` to transform categorical text features into model-ready numerical formats.
-* **Robust Modeling:** Implements a **Random Forest Classifier** with 100 estimators and `max_depth=10`.
-* **Balanced Splitting:** Uses `stratify` to keep class distribution consistent.
 
-## 🛠 Tech Stack
-* Python 3.x
-* Pandas
-* Scikit-learn (RandomForest, Train_Test_Split, Preprocessing)
+Smart Data Management: Automatically loads dataset (OpenML or local CSV cache) and avoids repeated downloads.
 
-## 📊 Quick Start
-```bash
-pip install pandas scikit-learn
+Automated Preprocessing: Handles missing values and encodes categorical features into numerical format.
+
+Robust Modeling: Uses a Random Forest Classifier for stable and accurate predictions.
+
+Balanced Data Split: Maintains class distribution using stratified train/test splitting.
+
+Reusable Pipeline: Trained model can be saved and reused for future predictions.
+
+SQLite Export: Saves predictions and dataset into a local database.
+
+---
+
+## 🧠 Machine Learning Pipeline
+
+1. Load dataset (with automatic caching)
+2. Handle missing values (median / most frequent)
+3. Encode categorical variables
+4. Split dataset into training and testing sets
+5. Train Random Forest model
+6. Evaluate model performance
+7. Save trained model
+8. Store results in SQLite database
+
+---
+
+## 📊 Model Performance
+
+- Accuracy: 0.86
+- Precision (>50K): 0.81
+- Recall (>50K): 0.53
+
+---
+
+## 📁 Output Files
+
+- adult_data_cleaned.csv
+- income_model.pkl
+- income_results.db
+
+---
+
+## 🚀 Quick Start
+
+Install dependencies:
+
+pip install pandas scikit-learn joblib
+
+Run the project:
+
 python Main.py
+
+---
+
+## 📌 Notes
+
+- Dataset is automatically downloaded or loaded from local storage.
+- No manual preprocessing is required.
+- Fully portable across different systems.
+
+---
+
+## 👤 Author
+
+Elyas Nematvand
